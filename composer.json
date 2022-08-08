@@ -1,0 +1,27 @@
+{
+    "name": "MasterKong/boot",
+    "description": "MasterKong日志记录",
+    "type": "library",
+    "authors": [
+        {
+            "name": "MasterKong",
+            "email": "MasterKong@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.0",
+        "illuminate/contracts": "5.5.*",
+        "illuminate/support": "5.5.*",
+        "monolog/monolog": "~1.24"
+    },
+    "autoload": {
+        "psr-4": {
+            "MasterKong\\Boot\\": "src/"
+        }
+    },
+    "scripts": {
+        "post-root-package-install": [
+            "php -r \"copy('./vendor/log_boot/config/log_boot.php', './config/log_boot.php');\""
+        ]
+    }
+}
