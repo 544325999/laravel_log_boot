@@ -6,3 +6,10 @@
 - 默认为 `stream`, `errorLog`, 可自动重写后将 `handler` 写进配置项即可
 - 默认为所有 `handler` 均采用 `BufferHandler` 重写启用
 - 请求执行 `log` 在包内采用全局中间件注册
+
+
+`AppServiceProvider` $this->app->register(\MasterKong\Boot\Providers\MasterKongProvider::class);
+use MasterKong\Boot\Middleware\ActionLog;
+`Kernel`    protected $middleware = [
+                            ActionLog::class
+            ];
